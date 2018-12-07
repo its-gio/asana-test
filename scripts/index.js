@@ -14,7 +14,8 @@ function showAnimal(animal, i) {
   let li = document.createElement("li");
   let img = document.createElement("img");
   img.setAttribute("src", `..${animal.image}`);
-  img.classList.add("pet-image");
+  img.classList.add("pet-container__image");
+  li.classList.add("pet-container");
   li.append(img);
   list.appendChild(li);
 }
