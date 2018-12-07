@@ -6,12 +6,15 @@ const list = document.getElementById("pet-list");
   await fetch("../data/dogs.json")
     .then(blob => blob.json())
     .then(data => animals.push(...data.dogs));
-  animals.forEach(animal => showAnimal(animal));
+  animals.forEach((animal, i) => showAnimal(animal, i));
 })();
 
-function showAnimal(animal) {
-  console.log(animal);
-  //   let li = document.createElement("li");
-  //   let img = document.createElement("img");
-  //   list.appendChild(li);
+function showAnimal(animal, i) {
+  //   console.log(animal.image, i);
+  let li = document.createElement("li");
+  let img = document.createElement("img");
+  img.setAttribute("src", `..${animal.image}`);
+  img.classList.add("pet-image");
+  li.append(img);
+  list.appendChild(li);
 }
