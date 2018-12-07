@@ -10,6 +10,10 @@
   line-height: 1.5;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
 }
@@ -38,10 +42,18 @@ a {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
+  padding: 0 40px;
 }
 
-.pet-image {
-  max-width: 100px;
+.pet-container {
+  padding: 5px;
+  max-width: 25%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.pet-container__image {
+  width: 100%;
   height: auto;
 }
 
