@@ -68,3 +68,16 @@ a {
   font-family: var(--font-serif);
   text-align: center;
 }
+
+/* Media Query */
+@media screen and (min-width: 501px) and (max-width: 800px) {
+  .pet-container {
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .pet-container {
+    max-width: 100%;
+  }
+}
