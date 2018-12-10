@@ -17,17 +17,17 @@ function showAnimal(animal) {
   img.classList.add("pet-container__image");
   li.classList.add("pet-container");
   li.append(img);
-  li.addEventListener("click", () => lightBox(animal));
+  img.addEventListener("click", () => lightBox(animal));
   return list.append(li);
 }
 
 function lightBox(animal) {
   LBImg.src = `${animal.image}`;
-  return (LBCon.style.display = "initial");
+  return LBCon.classList.remove("close");
 }
 
-function exitLightbox(LBCon) {
-  LBCon.style.display = "none";
+function exitLightbox() {
+  return LBCon.classList.add("close");
 }
 
-LBCon.addEventListener("click", () => exitLightbox(LBCon));
+LBCon.addEventListener("click", () => exitLightbox());
