@@ -1,6 +1,7 @@
 const animals = [];
 const list = document.getElementById("pet-list");
 const LBCon = document.getElementById("light-box__container");
+const LBImg = document.getElementById("light-box__image");
 
 (async function getAnimals() {
   await fetch("../data/dogs.json")
@@ -21,9 +22,12 @@ function showAnimal(animal) {
 }
 
 function lightBox(animal) {
-  let img = document.createElement("img");
-  img.src = `${animal.image}`;
-  img.classList.add("light-box__image");
-  LBCon.append(img);
-  LBCon.style.display = "initial";
+  LBImg.src = `${animal.image}`;
+  return (LBCon.style.display = "initial");
 }
+
+function exitLightbox(LBCon) {
+  LBCon.style.display = "none";
+}
+
+LBCon.addEventListener("click", () => exitLightbox(LBCon));
